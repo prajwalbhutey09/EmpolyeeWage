@@ -9,16 +9,20 @@ public class EmpolyeeWage {
         final int PART_TIME = 4;
         int pay = 0;
 
-        double check = Math.floor(Math.random() * 10) % 3;
-        if (check == 0) {
-            pay = WAGE_PER_HR * FULL_DAY;
-            System.out.println("Employee is FULL TIME and wage is " + pay);
-        } else if (check == 1) {
-            pay = WAGE_PER_HR * PART_TIME;
-            System.out.println("Employee is PART TIME and wage is " + pay);
-
-        } else {
-            System.out.println("Employee is Absent ");
+        int check = (int) (Math.floor(Math.random() * 10) % 3);
+        switch (check) {
+            case 0: {
+                pay = WAGE_PER_HR * FULL_DAY;
+                System.out.println("Employee is FULL TIME and wage is " + pay);
+            }
+            break;
+            case 1: {
+                pay = WAGE_PER_HR * PART_TIME;
+                System.out.println("Employee is PART TIME and wage is " + pay);
+            }
+            break;
+            default:
+                System.out.println("Employee is Absent ");
         }
     }
 }
